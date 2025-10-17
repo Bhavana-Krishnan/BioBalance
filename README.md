@@ -14,13 +14,11 @@
 - Secure login and registration system
 
 ---
-
-## **Screenshots**
-![Login/Home page](image-1.png)
-![Registration page](image.png)
-![Dashboard](image-2.png)
-![Add Entry](image-3.png)
-
+## Screenshots
+![Home Page](homepage.png)
+![Registration](registration.png)
+![Add Entry](add_entry.png)
+![dashboard](dashboard.png)
 
 ---
 
@@ -28,27 +26,28 @@
 
 - Python 3.8+
 - Flask – Web framework
-- Jinja2 – Templating
-- HTML, CSS, JavaScript
+- Flask-SQLAlchemy – ORM for database models
+- HTML, CSS, Jinja2
 - Pandas & Statsmodels – For data analysis
-- Plotly / Matplotlib (if used) – Graph generation
+- Plotly – Graph generation
 
 ---
 
 ## **Installation**
 
 1. Clone the repository:
-   ```bash
-   git clone <your-repo-url>
-   cd <repo-folder>
 
+   ```bash
+   git clone git@github.com:Bhavana-Krishnan/BioBalance.git
+   cd BioBalance
+   ```
 
 2. Create a virtual environment:
 
    ```bash
    python -m venv venv
-   source venv/bin/activate    # Linux/Mac
-   venv\Scripts\activate       # Windows
+   venv\Scripts\activate        # Windows
+   # source venv/bin/activate   # Linux/Mac
    ```
 
 3. Install dependencies:
@@ -57,12 +56,10 @@
    pip install -r requirements.txt
    ```
 
-4. Run the Flask app:
-
-   ```bash
-   flask run
+4. Run the app
+   ```python
+   python app.py   
    ```
-
 5. Open your browser at `http://127.0.0.1:5000/`
 
 ---
@@ -73,17 +70,29 @@
 BioBalance/
 │
 ├─ app.py                # Main Flask app
+├─ models.py             # SQLAlchemy models
+├─ moodgut.db             # db
 ├─ templates/
 │   ├─ base.html
 │   ├─ login.html
 │   ├─ register.html
 │   └─ dashboard.html
+│   └─ add_entry.html
 ├─ static/
-│   ├─ css/
-│   ├─ images/
-│   └─ js/
+│   ├─ style.css
+│   ├─ login.jpg
+│   ├─ brain_gut_connected.jpg
+│   ├─ brain_gut_link.jpg
+│   ├─ dashboard.jpg
+│   ├─ mood_gut.jpg
+│   ├─ your_gut_your_mood.jpg
 ├─ requirements.txt
 └─ README.md
+├─ dashboard.png # Screenshot for README
+├─ registration.png # Screenshot for README
+└─ homepage.png # Screenshot for README
+├─ empty_dashboard.png # Screenshot for README
+├─ add_entry.png # Screenshot for README
 ```
 
 ---
