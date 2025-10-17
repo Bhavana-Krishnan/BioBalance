@@ -1,10 +1,3 @@
-Absolutely! Let's create a **professional README** for your **Mood & Gut Tracker / BioBalance** app and outline the steps to push it to Git.
-
----
-
-## **README.md**
-
-````markdown
 # BioBalance – Mood & Gut Tracker
 
 **BioBalance** is a web application to track and visualize your **mood, gut health, sleep, water intake, and meals**. It generates personalized insights based on your entries to help you understand how lifestyle factors affect your well-being.
