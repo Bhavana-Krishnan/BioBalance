@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero-full-container" style="background-image: url('{{ url_for('static', filename='dashboard.jpg') }}')">
+
+    <div class="dashboard-header">
+        <a href="{{ url_for('add_entry') }}" class="btn top-btn left-btn">➕ Add Entry</a>
+        <h2 class="page-title">Dashboard</h2>
+        <a href="{{ url_for('logout') }}" class="btn top-btn right-btn logout-btn">Logout</a>
+    </div>
+
+    {% if charts %}
+    <div class="dashboard-content grid-charts">
+        {% for chart in charts %}
+        <div class="chart-box">
+            {{ chart|safe }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="interpretation">
+        <h3>🧭 Your Wellness Summary</h3>
+        <p>{{ interpretation|safe }}</p>
+    </div>
+
+    {% else %}
+    <p> <a href="{{ url_for('add_entry') }}" class="btn top-btn">No entries yet. Add your first one!</a></p>
+    {% endif %}
+</div>
+
+{% endblock %}

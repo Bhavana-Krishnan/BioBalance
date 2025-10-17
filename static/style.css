@@ -1,0 +1,334 @@
+/* Reset and base */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header title that stays fixed on top */
+.app-header {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+/* Full screen container with background */
+.hero-full-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form container for two-column layout */
+.hero-full-container form {
+    background: rgba(255, 255, 255, 0.6);
+    /* softer transparency */
+    padding: 40px 50px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* two equal columns */
+    gap: 30px 50px;
+    /* space between rows and columns */
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 5;
+    margin-top: 100px;
+    /* spacing from heading */
+}
+
+/* Ensure each field is neatly stacked in each column */
+.hero-full-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+    font-size: 16px;
+}
+
+.hero-full-container input,
+.hero-full-container select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Full width for button across both columns */
+.hero-full-container button {
+    grid-column: 1 / 3;
+    justify-self: center;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-full-container button:hover {
+    background-color: #45a049;
+}
+
+/* Adjust for small screens — stack vertically */
+@media (max-width: 768px) {
+    .hero-full-container form {
+        grid-template-columns: 1fr;
+        /* one column on small screens */
+        gap: 20px;
+        width: 90%;
+    }
+
+    .hero-full-container button {
+        grid-column: auto;
+    }
+}
+
+/* Headings */
+.hero-full-container .site-heading {
+    font-size: 42px;
+    color: black;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+}
+
+/* Page-specific background images */
+.bg-login .hero-full-container {
+    background-image: url('./login.jpg');
+}
+
+/* Header bar inside hero section */
+.page-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-size: 36px;
+    color: black;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin: 100px 0 20px 0;
+    /* spacing below fixed app title */
+    text-align: center;
+}
+
+/* Special absolute centering only when inside page-header (like Add Entry page) */
+.page-header .page-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    margin: 0;
+}
+
+/* Back button styling (stays top-left) */
+.btn.back-btn {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn.back-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 28px;
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .btn.back-btn {
+        align-self: flex-start;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Dashboard header layout (Add Entry, Title, Logout) */
+.dashboard-header {
+    position: relative;
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    /* space below fixed app heading */
+}
+
+/* Centered page title */
+.dashboard-header .page-title {
+    font-size: 36px;
+    color: black;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+/* Position Add Entry button on the left */
+.dashboard-header .left-btn {
+    position: absolute;
+    left: 40px;
+}
+
+/* Position Logout button on the right */
+.dashboard-header .right-btn {
+    position: absolute;
+    right: 40px;
+}
+
+/* Top buttons general style */
+.btn.top-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn.top-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Dashboard main area */
+.dashboard-content {
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .dashboard-header .left-btn,
+    .dashboard-header .right-btn {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .dashboard-header .page-title {
+        margin: 10px 0;
+    }
+}
+
+/* Dashboard multiple charts layout */
+.grid-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Chart container */
+.chart-box {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Interpretation section */
+.interpretation {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px 30px;
+    margin: 20px auto 60px;
+    max-width: 800px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.interpretation h3 {
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro-text {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.intro-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 18px;
+}

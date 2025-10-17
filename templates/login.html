@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body_class %}bg-dashboard{% endblock %}
+
+{% block content %}
+<div class="hero-full-container" style="background-image:url('{{ url_for('static', filename='brain_gut_link.jpg') }}')">
+    <div class="intro-text">
+        <h2>Welcome to BioBalance!</h2>
+        <p><span>Track your mood, gut health, sleep, water intake, and meals.</span></p>
+        <p><span>See trends and get personalized insights to
+                improve your well-being.</span>
+        </p>
+    </div>
+
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <input name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="color:white;">
+        New user?
+        <a href="{{ url_for('register') }}" class="btn top-btn">Register here</a>
+    </p>
+
+</div>
+{% endblock %}
